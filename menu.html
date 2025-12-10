@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu | Food App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="main-nav">
+        <a href="index.html" class="logo">FoodExpress</a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <button class="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+<!-- HEADER -->
+<header class="menu-header">
+    <h1>Food Menu</h1>
+</header>
+
+<!-- CATEGORY NAV -->
+<nav class="category-nav">
+    <button class="active">Burgers</button>
+    <button>Pizza</button>
+    <button>Desserts</button>
+    <button>Drinks</button>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="menu-container">
+
+    <!-- MENU ITEMS -->
+    <section class="menu-items" id="menuItems">
+    </section>
+
+    <!-- CART -->
+    <aside class="cart">
+        <h2>Your Cart</h2>
+        <p id="emptyCartMsg">Cart is empty</p>
+        <div id="cartItems"></div>
+        <hr>
+        <p><strong>Total:</strong> $<span id="cartTotal">0.00</span></p>
+        <button class="checkout-btn">Checkout</button>
+    </aside>
+
+</main>
+
+<!-- JS -->
+<script src="JS/script.js"></script>
+
+</body>
+</html>
