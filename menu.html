@@ -1,60 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Menu | Food App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Menu | FoodExpress</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="CSS/styles.css">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Small custom styles (temporary / minimal) -->
+  <style>
+  .category-nav button.active {
+    background-color: black;
+    color: white;
+    border-color: black;
+  }
+</style>
+
 </head>
-<body>
 
-    <!-- NAV -->
-    <nav class="main-nav">
-        <a href="index.html" class="logo">FoodExpress</a>
+<body class="bg-gray-100">
 
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <button class="logout-btn">Logout</button>
-        </div>
-    </nav>
+  <!-- NAV -->
+  <nav class="flex justify-between items-center bg-black text-white px-6 py-4">
+    <h1 class="text-xl font-bold">Paul's Kitchen</h1>
 
-<!-- HEADER -->
-<header class="menu-header">
-    <h1>Food Menu</h1>
-</header>
+<div class="flex items-center gap-6">
 
-<!-- CATEGORY NAV -->
-<nav class="category-nav">
-    <button class="active">Burgers</button>
-    <button>Pizza</button>
-    <button>Desserts</button>
-    <button>Drinks</button>
+  <a href="index.html" class="hover:underline">Home</a>
+  <a href="menu.html" class="hover:underline">Menu</a>
+
+  <!-- CART ICON -->
+  <div class="relative">
+    <span class="text-xl">🛒</span>
+    <span
+      id="cartCount"
+      class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full hidden"
+    >
+      0
+    </span>
+  </div>
+
+  <button class="logout-btn bg-red-500 px-3 py-1 rounded hover:bg-red-600">
+    Logout
+  </button>
+</div>
+
+  </nav>
+
+  <!-- PAGE TITLE -->
+  <header class="text-center py-6">
+    <h2 class="text-3xl font-bold">Food Menu</h2>
+  </header>
+
+  <!-- CATEGORY NAV -->
+<nav class="category-nav flex justify-center gap-3 mb-8">
+  <button class="px-5 py-2 rounded-full border font-medium">Burgers</button>
+  <button class="px-5 py-2 rounded-full border font-medium">Pizza</button>
+  <button class="px-5 py-2 rounded-full border font-medium">Desserts</button>
+  <button class="px-5 py-2 rounded-full border font-medium">Drinks</button>
 </nav>
 
-<!-- MAIN CONTENT -->
-<main class="menu-container">
+  <!-- MAIN CONTENT -->
+  <main class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-6">
 
     <!-- MENU ITEMS -->
-    <section class="menu-items" id="menuItems">
+    <section
+      id="menuItems"
+      class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
+      <!-- Injected by JS -->
     </section>
 
     <!-- CART -->
-    <aside class="cart">
-        <h2>Your Cart</h2>
-        <p id="emptyCartMsg">Cart is empty</p>
-        <div id="cartItems"></div>
-        <hr>
-        <p><strong>Total:</strong> $<span id="cartTotal">0.00</span></p>
-        <button class="checkout-btn">Checkout</button>
+    <aside class="bg-white p-4 rounded shadow self-start h-fit">
+      <h3 class="text-xl font-bold mb-2">Your Cart</h3>
+
+      <p id="emptyCartMsg" class="text-gray-500">Cart is empty</p>
+      <div id="cartItems" class="space-y-2"></div>
+
+      <hr class="my-4">
+
+      <p class="font-semibold">
+        Total: $<span id="cartTotal">0.00</span>
+      </p>
+
+      <button
+        class="checkout-btn w-full mt-4 bg-green-600 text-white py-2 rounded hover:bg-green-700"
+      >
+        Checkout
+      <button
+        id="clearCartBtn"
+        class="w-full mt-2 bg-gray-300 text-black py-2 rounded hover:bg-gray-400 transition"
+      >
+        Clear Cart
+      </button>
+
     </aside>
 
-</main>
+  </main>
 
-<!-- JS -->
-<script src="JS/script.js"></script>
+  <!-- JS -->
+  <script src="JS/script.js"></script>
 
 </body>
 </html>
